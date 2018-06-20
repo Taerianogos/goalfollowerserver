@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GoalFollower</string>
+
+    <string-array name="namess2">
+        <item>monis</item>
+        <item>caba e gay</item>
+        <item>Dragon Born</item>
+    </string-array>
+
+    <string-array name="due_date">
+        <item>2019-12-13</item>
+        <item>2018-12-13</item>
+        <item>2011-11-11</item>
+    </string-array>
+</resources>

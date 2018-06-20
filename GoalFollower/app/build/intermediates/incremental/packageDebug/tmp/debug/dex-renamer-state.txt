@@ -1,0 +1,4 @@
+#Wed Jun 20 23:40:37 EEST 2018
+base.0=C\:\\Users\\stefan\\Downloads\\GoalFollower\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

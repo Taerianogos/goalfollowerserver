@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cegeka.goalfollower.ro.goalfollower">
+
+    <uses-permission android:name="com.android.alarm..permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera2" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="GoalFollower"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".EntranceActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="cegeka.goalfollower.ro.goalfollower.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".More_Info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Notification_1"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".Notification_reciever" />
+        <receiver android:name=".Notification_reciever_2" />
+
+        <activity android:name=".UnlockActivity" />
+        <activity android:name=".UnlockRecActivity" />
+        <activity android:name=".SetpassActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpActivity"></activity>
+    </application>
+
+</manifest>

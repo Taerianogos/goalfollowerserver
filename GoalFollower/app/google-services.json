@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "831080387470",
+    "firebase_url": "https://cegeka-goalfollower.firebaseio.com",
+    "project_id": "cegeka-goalfollower",
+    "storage_bucket": "cegeka-goalfollower.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831080387470:android:e3e2f5887d7aa3f6",
+        "android_client_info": {
+          "package_name": "cegeka.goalfollower.ro.goalfollower"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831080387470-03m1du0atr7gj70lup71bogoedev5rok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cegeka.goalfollower.ro.goalfollower",
+            "certificate_hash": "672b5bc747b3326a43b0ff528fa72ae1ffe4d94c"
+          }
+        },
+        {
+          "client_id": "831080387470-c3ibsigup2bloa5mel3d9esddplifccq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "831080387470-c3ibsigup2bloa5mel3d9esddplifccq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUcGehZxewwkiZ9WHj0kbOI1QVjRb64pY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831080387470-c3ibsigup2bloa5mel3d9esddplifccq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

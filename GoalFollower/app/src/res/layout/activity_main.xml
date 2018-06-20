@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="32dp"
+        android:text="Hey there USER"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="120dp"
+        android:layout_height="128dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="16dp"
+        android:rotation="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        android:text="You have n goals left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/buttonlist"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/goatlistbtn"
+        android:onClick="OpenListActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonaddm"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/addbtn"
+        android:onClick="OpenAddActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toEndOf="@+id/buttonlist"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonrecbeam"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/recievebtn"
+        android:onClick="OpenRecActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonaddm"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <Button
+        android:id="@+id/prof_pic"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/profilebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonrecbeam"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonlist"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/score_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="133dp"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="28dp"
+        android:text="Your Score is : 100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <Button
+        android:id="@+id/refresh_btn"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/refreshbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/notification_set"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_pic"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <Button
+        android:id="@+id/notification_set"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/setnotif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonrecbeam"
+        app:layout_constraintVertical_bias="0.291" />
+
+</android.support.constraint.ConstraintLayout>
