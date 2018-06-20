@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
     Button refresh ;
     Button setnot;
     String mSecondPhotoPath;
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -113,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         Readscor();
         More_Info.sum=opkivus.get(0);
         score.setText("Your Score is : " + More_Info.sum);
-
         refresh = (Button) findViewById(R.id.refresh_btn);
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override

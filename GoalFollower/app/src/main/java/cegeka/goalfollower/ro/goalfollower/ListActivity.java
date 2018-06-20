@@ -14,6 +14,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -41,6 +48,8 @@ public class ListActivity extends AppCompatActivity {
     List<Date> duedate=new ArrayList<>();
     Button save;
     static Activity act;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 static int sizelist=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +57,40 @@ static int sizelist=0;
         setContentView(R.layout.activity_list);
         act = this;
 
-        Readf();
+        //Readf();
+        final ListView GoalListView = (ListView) findViewById(R.id.GoalListView);
+        DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals");
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                returnlist.clear();
+                for(DataSnapshot child : dataSnapshot.getChildren()){
+                    returnlist.add(child.getValue(Goal.class));
+                }
+                names.clear();
+                descrips.clear();
+                duedate.clear();
+                for (Goal item : returnlist) {
+                    names.add(item.desc);
+                    descrips.add(item.descrip);
+                    duedate.add(item.dueDate);
+                }
+                sizelist=names.size();
+                ItemAdapter itemAdapt =  new ItemAdapter(ListActivity.this , names , duedate  );
+
+                GoalListView.setAdapter(itemAdapt);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         SimpleDateFormat format =
                 new SimpleDateFormat("yyyy-MM-dd");
-        final ListView GoalListView = (ListView) findViewById(R.id.GoalListView);
-        names.clear();
+        /*names.clear();
         descrips.clear();
         duedate.clear();
         for (Goal item : returnlist) {
@@ -63,7 +101,7 @@ static int sizelist=0;
         sizelist=names.size();
         ItemAdapter itemAdapt =  new ItemAdapter(this , names , duedate  );
 
-        GoalListView.setAdapter(itemAdapt);
+        GoalListView.setAdapter(itemAdapt);*/
 
         GoalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

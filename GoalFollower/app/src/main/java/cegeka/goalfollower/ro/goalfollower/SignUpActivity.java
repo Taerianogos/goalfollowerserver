@@ -68,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                public void onComplete(@NonNull Task<AuthResult> task) {
                                                    if(task.isSuccessful()){
                                                        myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("username").setValue(user);
+                                                       myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Nr Goals").setValue(0+"");
                                                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                                        startActivity(intent);
                                                    }
