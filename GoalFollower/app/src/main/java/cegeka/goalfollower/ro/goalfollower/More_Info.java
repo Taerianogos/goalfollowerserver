@@ -16,6 +16,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -61,7 +65,8 @@ public class More_Info extends AppCompatActivity {
     int[] durations = new int[1001];
     AlarmManager asfasdodf;
     ArrayList<AlarmManager> alarmManagers = new ArrayList<>(Collections.nCopies(1001, asfasdodf));
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +83,29 @@ public class More_Info extends AppCompatActivity {
     @Override
     public void onClick(View v) {
             indexfordel=index;
-        Intent passssssIntent = new Intent (More_Info.this ,UnlockRecActivity.class);
-        startActivityForResult(passssssIntent,3);
+        if(returnlist.get(indexfordel).pass!=null){
+            Intent passssssIntent = new Intent (More_Info.this ,UnlockRecActivity.class);
+        startActivityForResult(passssssIntent,3);}else {
+            Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
+            intent13.putExtra("index" , index);
+            intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
+            PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), sizelist-1, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
+            alarmManagers.set(sizelist-1,(AlarmManager) getSystemService(ALARM_SERVICE));
+            alarmManagers.get(sizelist-1).cancel(pendingIntent12);
+            alarmManagers.remove(sizelist-1);
+            myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(index).desc).setValue(null);
+            returnlist.remove(index);
+            S_description_not.remove(index);
+            S_name_not.remove(index);
+            //Log.d("caba",index+"");
+            sum=sum+100;
+            opkivus.set(0,sum);
+            Addscor();
+            Addg();
+            Adddesc();
+            Addnem();
+            ListActivity.act.finish();
+            finish();}
         Toast.makeText(More_Info.this,ifvalidpass+"",Toast.LENGTH_LONG).show();
     }
 });
@@ -150,13 +176,15 @@ public class More_Info extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 3){
             switch (resultCode){
-                case Activity.RESULT_OK:{Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
+                case Activity.RESULT_OK:{
+                    Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
                     intent13.putExtra("index" , index);
                     intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
                     PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), sizelist-1, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
                     alarmManagers.set(sizelist-1,(AlarmManager) getSystemService(ALARM_SERVICE));
                     alarmManagers.get(sizelist-1).cancel(pendingIntent12);
                     alarmManagers.remove(sizelist-1);
+                    myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(index).desc).setValue(null);
                     returnlist.remove(index);
                     S_description_not.remove(index);
                     S_name_not.remove(index);
@@ -169,7 +197,8 @@ public class More_Info extends AppCompatActivity {
                     Addnem();
                     ListActivity.act.finish();
                     finish();
-                    break;}
+                    break;
+                }
                 default:
                     Toast.makeText(More_Info.this, "Parola gresita", Toast.LENGTH_LONG).show();
             }

@@ -51,6 +51,7 @@ public class ListActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
 static int sizelist=0;
+boolean delay=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,34 +60,37 @@ static int sizelist=0;
 
         //Readf();
         final ListView GoalListView = (ListView) findViewById(R.id.GoalListView);
-        DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals");
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                returnlist.clear();
-                for(DataSnapshot child : dataSnapshot.getChildren()){
-                    returnlist.add(child.getValue(Goal.class));
-                }
-                names.clear();
-                descrips.clear();
-                duedate.clear();
-                for (Goal item : returnlist) {
-                    names.add(item.desc);
-                    descrips.add(item.descrip);
-                    duedate.add(item.dueDate);
-                }
-                sizelist=names.size();
-                ItemAdapter itemAdapt =  new ItemAdapter(ListActivity.this , names , duedate  );
 
-                GoalListView.setAdapter(itemAdapt);
+           DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals");
+           myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+               @Override
+               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                   returnlist.clear();
+                   for (DataSnapshot child : dataSnapshot.getChildren()) {
+                       returnlist.add(child.getValue(Goal.class));
+                   }
+                   Addg();
+                   names.clear();
+                   descrips.clear();
+                   duedate.clear();
+                   for (Goal item : returnlist) {
+                       names.add(item.desc);
+                       descrips.add(item.descrip);
+                       duedate.add(item.dueDate);
+                   }
+                   sizelist = names.size();
+                   ItemAdapter itemAdapt = new ItemAdapter(ListActivity.this, names, duedate);
 
-            }
+                   GoalListView.setAdapter(itemAdapt);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+               }
 
-            }
-        });
+               @Override
+               public void onCancelled(@NonNull DatabaseError databaseError) {
+
+               }
+           });
+
         SimpleDateFormat format =
                 new SimpleDateFormat("yyyy-MM-dd");
         /*names.clear();
@@ -123,9 +127,21 @@ static int sizelist=0;
             e.printStackTrace();
         }
     }
+    public void Addg() {
+        File myfile = new File(this.getFilesDir(), filename);
+        FileOutputStream outputStream;
+        try {
+            outputStream = openFileOutput(filename, MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream(outputStream);
+            o.reset();
+            o.writeObject(returnlist);
+            o.flush();
+            o.close();
+        } catch (Exception e) {
+            e.printStackTrace();
 
-    public void RemoveFire(int i){
-        myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(i).desc).setValue(null);
+        }
     }
+
 
 }

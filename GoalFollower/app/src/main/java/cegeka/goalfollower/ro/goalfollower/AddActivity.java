@@ -49,9 +49,9 @@ public class AddActivity extends AppCompatActivity {
     EditText editpass;
     Button addbtn = null;
     Button beam = null;
-    Button mSendBtn = null;
     static String filename = "goals";
     Goal item = new Goal();
+    Button mSendBtn = null;
     static String concat=null;
     ArrayList<Goal> items = new ArrayList<>();
     String stupiddesc=null;
@@ -127,7 +127,6 @@ public class AddActivity extends AppCompatActivity {
                 }
             }
         });
-
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
