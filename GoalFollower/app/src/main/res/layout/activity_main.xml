@@ -172,4 +172,20 @@
         app:layout_constraintTop_toBottomOf="@+id/score_text_view"
         app:layout_constraintVertical_bias="0.178" />
 
+    <Button
+        android:id="@+id/sendGoals"
+        android:layout_width="82dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Log out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonrecbeam"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/prof_pic"
+        app:layout_constraintTop_toBottomOf="@+id/log_out"
+        app:layout_constraintVertical_bias="0.176" />
+
 </android.support.constraint.ConstraintLayout>

@@ -87,7 +87,6 @@ static int sizelist=0;
 
             }
         });
-
         SimpleDateFormat format =
                 new SimpleDateFormat("yyyy-MM-dd");
         /*names.clear();
@@ -123,6 +122,10 @@ static int sizelist=0;
             Toast.makeText(ListActivity.this,"Err read",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+
+    public void RemoveFire(int i){
+        myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(i).desc).setValue(null);
     }
 
 }

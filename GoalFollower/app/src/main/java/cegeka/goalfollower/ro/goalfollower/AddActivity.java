@@ -49,6 +49,7 @@ public class AddActivity extends AppCompatActivity {
     EditText editpass;
     Button addbtn = null;
     Button beam = null;
+    Button mSendBtn = null;
     static String filename = "goals";
     Goal item = new Goal();
     static String concat=null;
@@ -60,6 +61,7 @@ public class AddActivity extends AppCompatActivity {
     int s;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    static Goal prostie = new Goal();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +73,7 @@ public class AddActivity extends AppCompatActivity {
         editpass=findViewById(R.id.editText7);
         addbtn = findViewById(R.id.button3);
         beam = findViewById(R.id.beambttn);
-
+        mSendBtn = findViewById(R.id.sendBtn);
 
         beam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +125,25 @@ public class AddActivity extends AppCompatActivity {
                     Addg();
                     finish();
                 }
+            }
+        });
+
+        mSendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!Validate()) return;
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+                try{
+                    prostie.dueDate = sdf.parse(textDate.getText().toString());
+                } catch(Exception ex){
+                    ex.printStackTrace();
+                }
+                prostie.desc = editTextdesc.getText().toString();
+                prostie.descrip = editTextdescrip.getText().toString();
+                prostie.pass = editpass.getText().toString();
+                Intent intent = new Intent(AddActivity.this, SendViaNetActivity.class);
+                startActivity(intent);
             }
         });
     }
