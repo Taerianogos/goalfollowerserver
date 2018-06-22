@@ -50,7 +50,7 @@ public class PendingGoalActivity extends AppCompatActivity {
                             pendingDescrips.add(item.descrip);
                             pendingDates.add(item.dueDate);
                         }
-                        NewItemAdapter itemAdapt = new NewItemAdapter(PendingGoalActivity.this, pendingNames, pendingDates, pendingGoals);
+                        NewItemAdapter itemAdapt = new NewItemAdapter(PendingGoalActivity.this, pendingNames, pendingGoals);
                         PendingListView.setAdapter(itemAdapt);
                     }
 

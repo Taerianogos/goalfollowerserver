@@ -49,7 +49,7 @@ public class FinishInternetActivity extends AppCompatActivity {
                             fDescrips.add(item.descrip);
                             fDates.add(item.dueDate);
                         }
-                        NewerItemAdapter itemAdapt = new NewerItemAdapter(FinishInternetActivity.this, fNames, fDates, fGoals);
+                        NewerItemAdapter itemAdapt = new NewerItemAdapter(FinishInternetActivity.this, fNames, fGoals);
                         fListView.setAdapter(itemAdapt);
                     }
 

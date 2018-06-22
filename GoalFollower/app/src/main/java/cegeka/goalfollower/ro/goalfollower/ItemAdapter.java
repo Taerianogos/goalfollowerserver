@@ -20,14 +20,12 @@ public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
     List<String> names;
-    List<Date> duedate;
 
   //  List<Boolean>checked;
 
     public ItemAdapter(Context c , List<String> n ,List<Date> d /*, List<Boolean> ce*/)
     {
         names = n;
-        duedate = d;
        // checked = ce;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -51,21 +49,8 @@ public class ItemAdapter extends BaseAdapter {
         View v = mInflater.inflate(R.layout.custom_list,null);
 
         TextView name_taskTextView = v.findViewById(R.id.name_task);
-        TextView due_dateTextView = v.findViewById(R.id.due_date);
-
         String name = names.get(position);
-        Date date = duedate.get(position);
-        SimpleDateFormat format =
-                new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            date =
-                    format.parse(date.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         name_taskTextView.setText(name);
-        due_dateTextView.setText(date.toString());
-
 
         return v;
     }

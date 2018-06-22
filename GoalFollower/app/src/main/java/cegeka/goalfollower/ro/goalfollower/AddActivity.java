@@ -69,7 +69,6 @@ public class AddActivity extends AppCompatActivity {
         setTitle("Add or send a new goal");
         editTextdesc = findViewById(R.id.editText);
         editTextdescrip=findViewById(R.id.editText5);
-        textDate = findViewById(R.id.editText3);
         addbtn = findViewById(R.id.button3);
         beam = findViewById(R.id.beambttn);
         mSendBtn = findViewById(R.id.sendBtn);
@@ -80,7 +79,7 @@ public class AddActivity extends AppCompatActivity {
 
                 if (Validate()) {
                     stupiddesc = editTextdesc.getText().toString();
-                    stupiddate=textDate.getText().toString();
+                    stupiddate="9999-9-9-9-9";
                     stupiddescrip=editTextdescrip.getText().toString();
                     stupidpass=FirebaseAuth.getInstance().getCurrentUser().getUid();
                     concat=stupiddesc+"/"+stupiddate+"/"+stupiddescrip+"/"+stupidpass+"/";
@@ -101,7 +100,7 @@ public class AddActivity extends AppCompatActivity {
                     item.descrip=editTextdescrip.getText().toString();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
                     try {
-                        item.dueDate = sdf.parse(textDate.getText().toString());
+                        item.dueDate = sdf.parse("9999-9-9-9-9");
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -134,7 +133,7 @@ public class AddActivity extends AppCompatActivity {
 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
                 try{
-                    prostie.dueDate = sdf.parse(textDate.getText().toString());
+                    prostie.dueDate = sdf.parse("9999-9-9-9-9");
                 } catch(Exception ex){
                     ex.printStackTrace();
                 }
@@ -182,35 +181,12 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private boolean Validate() {
-        if (editTextdesc.getText().toString().trim().equals("") || editTextdescrip.getText().toString().trim().equals("")||
-                textDate.getText().toString().trim().equals("")) {
+        if (editTextdesc.getText().toString().trim().equals("") || editTextdescrip.getText().toString().trim().equals("")) {
             Toast.makeText(AddActivity.this,
                     "All the fields are mandatory",
                     Toast.LENGTH_LONG).show();
             return false;
         }
-        SimpleDateFormat format =
-                new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-        Date date = null;
-        try {
-            date =
-                    format.parse(textDate.getText().toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-            Toast.makeText(AddActivity.this,
-                    "Invalid date format",
-                    Toast.LENGTH_LONG).show();
-            return false;
-
-        }
-        Date currentDate = new Date();
-        if (date != null && date.compareTo(currentDate) <= 0) {
-            Toast.makeText(AddActivity.this,
-                    "Date should be at least today",
-                    Toast.LENGTH_LONG).show();
-            return false;
-        }
-
         return true;
     }
     }

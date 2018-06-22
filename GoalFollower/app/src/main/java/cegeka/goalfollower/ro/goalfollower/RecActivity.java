@@ -53,7 +53,6 @@ public class RecActivity extends AppCompatActivity implements NfcAdapter.CreateN
         setContentView(R.layout.activity_rec);
         setTitle("Receive goal through NFC");
         editdesc = findViewById(R.id.editText2);
-        editdate = findViewById(R.id.editText4);
         editdescrip=findViewById(R.id.editText6);
         addtolist = findViewById(R.id.button);
         mmNfcAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -119,7 +118,6 @@ public class RecActivity extends AppCompatActivity implements NfcAdapter.CreateN
 
     void processIntent (Intent intent){
         editdesc = findViewById(R.id.editText2);
-        editdate = findViewById(R.id.editText4);
         Parcelable[] rawMsgs = intent.getParcelableArrayExtra(
                 NfcAdapter.EXTRA_NDEF_MESSAGES);
         // only one message sent during the beam

@@ -32,7 +32,6 @@ import static cegeka.goalfollower.ro.goalfollower.PendingGoalActivity.pendingNam
 public class NewItemAdapter extends BaseAdapter {
     LayoutInflater mInflater;
     List<String> mnames;
-    List<Date> mduedate;
     List<Goal> mGoal;
     Goal item = new Goal();
     Context cont;
@@ -40,11 +39,10 @@ public class NewItemAdapter extends BaseAdapter {
     DatabaseReference myRef = database.getReference();
     //  List<Boolean>checked;
 
-    public NewItemAdapter(Context c , List<String> n ,List<Date> d, List<Goal> g/*, List<Boolean> ce*/)
+    public NewItemAdapter(Context c , List<String> n , List<Goal> g/*, List<Boolean> ce*/)
     {
         cont = c;
         mnames = n;
-        mduedate = d;
         mGoal = g;
         // checked = ce;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -69,12 +67,10 @@ public class NewItemAdapter extends BaseAdapter {
         View v = mInflater.inflate(R.layout.custom_list_2,null);
 
         TextView name_taskTextView = v.findViewById(R.id.name_task2);
-        TextView due_dateTextView = v.findViewById(R.id.due_date2);
         Button buttonYes = v.findViewById(R.id.YesBtn);
         Button buttonNo = v.findViewById(R.id.NoBtn);
 
         String name = mnames.get(position);
-        Date date = mduedate.get(position);
 
         buttonYes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +94,7 @@ public class NewItemAdapter extends BaseAdapter {
                                     pendingDescrips.add(item.descrip);
                                     pendingDates.add(item.dueDate);
                                 }
-                                PendingListView.setAdapter(new NewItemAdapter(cont, pendingNames, pendingDates, pendingGoals));
+                                PendingListView.setAdapter(new NewItemAdapter(cont, pendingNames, pendingGoals));
                             }
 
                             @Override
@@ -129,7 +125,7 @@ public class NewItemAdapter extends BaseAdapter {
                                     pendingDescrips.add(item.descrip);
                                     pendingDates.add(item.dueDate);
                                 }
-                                PendingListView.setAdapter(new NewItemAdapter(cont, pendingNames, pendingDates, pendingGoals));
+                                PendingListView.setAdapter(new NewItemAdapter(cont, pendingNames, pendingGoals));
                             }
 
                             @Override
@@ -139,16 +135,8 @@ public class NewItemAdapter extends BaseAdapter {
                         });
             }
         });
-        SimpleDateFormat format =
-                new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            date =
-                    format.parse(date.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
         name_taskTextView.setText(name);
-        due_dateTextView.setText(date.toString());
 
 
         return v;

@@ -30,7 +30,6 @@ import static cegeka.goalfollower.ro.goalfollower.FinishInternetActivity.fNames;
 public class NewerItemAdapter extends BaseAdapter{
     LayoutInflater mInflater;
     List<String> mnames;
-    List<Date> mduedate;
     List<Goal> mGoal;
     Goal item = new Goal();
     Context cont;
@@ -38,11 +37,10 @@ public class NewerItemAdapter extends BaseAdapter{
     DatabaseReference myRef = database.getReference();
     //  List<Boolean>checked;
 
-    public NewerItemAdapter(Context c , List<String> n ,List<Date> d, List<Goal> g/*, List<Boolean> ce*/)
+    public NewerItemAdapter(Context c , List<String> n , List<Goal> g/*, List<Boolean> ce*/)
     {
         cont = c;
         mnames = n;
-        mduedate = d;
         mGoal = g;
         // checked = ce;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -67,12 +65,10 @@ public class NewerItemAdapter extends BaseAdapter{
         View v = mInflater.inflate(R.layout.custom_list_3,null);
 
         TextView name_taskTextView = v.findViewById(R.id.name_task2);
-        TextView due_dateTextView = v.findViewById(R.id.due_date2);
         Button buttonYes = v.findViewById(R.id.AgreeBtn);
         final Button buttonNo = v.findViewById(R.id.RejectBtn);
 
         String name = mnames.get(position);
-        Date date = mduedate.get(position);
 
         buttonYes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +102,7 @@ public class NewerItemAdapter extends BaseAdapter{
                                                     fDescrips.add(item.descrip);
                                                     fDates.add(item.dueDate);
                                                 }
-                                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fDates, fGoals));
+                                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fGoals));
                                             }
 
                                             @Override
@@ -144,7 +140,7 @@ public class NewerItemAdapter extends BaseAdapter{
                                     fDescrips.add(item.descrip);
                                     fDates.add(item.dueDate);
                                 }
-                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fDates, fGoals));
+                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fGoals));
                             }
 
                             @Override
@@ -154,16 +150,7 @@ public class NewerItemAdapter extends BaseAdapter{
                         });
             }
         });
-        SimpleDateFormat format =
-                new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            date =
-                    format.parse(date.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         name_taskTextView.setText(name);
-        due_dateTextView.setText(date.toString());
 
 
         return v;
