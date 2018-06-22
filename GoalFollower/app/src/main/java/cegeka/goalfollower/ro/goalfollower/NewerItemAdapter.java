@@ -87,8 +87,8 @@ public class NewerItemAdapter extends BaseAdapter{
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 String UID = dataSnapshot.getValue(String.class);
-                                myRef.child("users").child(UID).child("Goals").child(item.desc).setValue(null);
-                                myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("For Confirmation Goals").child(item.desc).setValue(null);
+                                myRef.child("users").child(UID).child("Goals").child(item.desc).child("pass").setValue(null);
+                                myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("For Confirmation Goals UID").child(item.desc).setValue(null);
                                 myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("For Confirmation Goals").child(item.desc).setValue(null);
                                 myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("For Confirmation Goals")
                                         .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -106,7 +106,7 @@ public class NewerItemAdapter extends BaseAdapter{
                                                     fDescrips.add(item.descrip);
                                                     fDates.add(item.dueDate);
                                                 }
-                                                fListView.setAdapter(new NewItemAdapter(cont, fNames, fDates, fGoals));
+                                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fDates, fGoals));
                                             }
 
                                             @Override
@@ -144,7 +144,7 @@ public class NewerItemAdapter extends BaseAdapter{
                                     fDescrips.add(item.descrip);
                                     fDates.add(item.dueDate);
                                 }
-                                fListView.setAdapter(new NewItemAdapter(cont, fNames, fDates, fGoals));
+                                fListView.setAdapter(new NewerItemAdapter(cont, fNames, fDates, fGoals));
                             }
 
                             @Override
