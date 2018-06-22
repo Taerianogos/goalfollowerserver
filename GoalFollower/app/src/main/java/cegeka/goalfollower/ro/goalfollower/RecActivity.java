@@ -76,19 +76,6 @@ public class RecActivity extends AppCompatActivity implements NfcAdapter.CreateN
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Nr Goals");
-                ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        s = dataSnapshot.getValue(int.class);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-                s++;
                 myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(recitem.desc).setValue(recitem);
                 recitems.add(recitem);
                 Addgrec();
