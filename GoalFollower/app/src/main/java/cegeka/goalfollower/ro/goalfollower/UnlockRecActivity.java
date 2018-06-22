@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -66,7 +68,7 @@ deltolist.setOnClickListener(new View.OnClickListener() {
     public NdefMessage createNdefMessage(NfcEvent event) {
         NdefMessage msg = new NdefMessage(
                 new NdefRecord[] { createMime(
-                        "application/cegeka.goalfollower.ro", pass.get(0).getBytes())
+                        "application/cegeka.goalfollower.ro", FirebaseAuth.getInstance().getCurrentUser().getUid().getBytes())
                         ,NdefRecord.createApplicationRecord("cegeka.goalfollower.ro")
                 });
         return msg;

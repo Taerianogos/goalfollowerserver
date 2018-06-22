@@ -61,15 +61,33 @@
             android:name=".Notification_1"
             android:screenOrientation="portrait" />
 
-        <receiver android:name=".Notification_reciever" />
-        <receiver android:name=".Notification_reciever_2" />
+        <receiver
+            android:name=".Notification_reciever"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name=".Notification_reciever_2"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".UnlockActivity" />
-        <activity android:name=".UnlockRecActivity" />
-        <activity android:name=".SetpassActivity" />
-        <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SendViaNetActivity"></activity>
+        <activity
+            android:name=".UnlockActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UnlockRecActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SetpassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LogInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SendViaNetActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".PendingGoalActivity" />
+        <activity android:name=".FinishInternetActivity" />
     </application>
 
 </manifest>

@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
@@ -46,7 +48,7 @@ public class UnlockActivity extends AppCompatActivity implements NfcAdapter.Crea
         Readpass();
         NdefMessage msg = new NdefMessage(
                 new NdefRecord[] { createMime(
-                        "application/cegeka.goalfollower.ro", pass.get(0).trim().getBytes())
+                        "application/cegeka.goalfollower.ro", FirebaseAuth.getInstance().getCurrentUser().getUid().getBytes())
                         ,NdefRecord.createApplicationRecord("cegeka.goalfollower.ro")
                 });
         return msg;

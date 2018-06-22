@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
 MERGED from [com.google.firebase:firebase-core:16.0.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.0.aar\202c7b55df20c391a6b939cb57f608bc\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-database:16.0.1] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-database-16.0.1.aar\e6d36ac02e7df169487c23487b2fcf85\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\fa8d732985759054b3c86a5dbf76b533\AndroidManifest.xml:17:1-38:12
@@ -39,20 +39,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\stefan\.gradle
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\b921ee8856cb95cf7fa424b26009a939\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\96118bbaedf2c3869fc38d7273923b21\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b26a0b23ffb4c44d95e2b4c7e476b457\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
-INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
 	package
 		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:3:5-50
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-74:12
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:1-93:12
 		INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:2:11-69
@@ -79,7 +79,7 @@ ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:15:5-72:19
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:15:5-91:19
 MERGED from [com.google.firebase:firebase-core:16.0.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.0.aar\202c7b55df20c391a6b939cb57f608bc\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:16.0.0] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.0.aar\202c7b55df20c391a6b939cb57f608bc\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\stefan\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\fa8d732985759054b3c86a5dbf76b533\AndroidManifest.xml:22:5-36:19
@@ -205,33 +205,61 @@ ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:61:13-43
 receiver#cegeka.goalfollower.ro.goalfollower.Notification_reciever
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:64:9-59
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:64:9-66:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:66:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:64:19-56
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:65:13-50
 receiver#cegeka.goalfollower.ro.goalfollower.Notification_reciever_2
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:65:9-61
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:67:9-69:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:69:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:65:19-58
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:68:13-52
 activity#cegeka.goalfollower.ro.goalfollower.UnlockActivity
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:67:9-52
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:71:9-73:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:73:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:67:19-49
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:72:13-43
 activity#cegeka.goalfollower.ro.goalfollower.UnlockRecActivity
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:68:9-55
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:74:9-76:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:76:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:68:19-52
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:75:13-46
 activity#cegeka.goalfollower.ro.goalfollower.SetpassActivity
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:69:9-53
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:77:9-79:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:79:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:69:19-50
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:78:13-44
 activity#cegeka.goalfollower.ro.goalfollower.LogInActivity
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:70:9-51
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:80:9-82:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:82:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:70:19-48
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:81:13-42
 activity#cegeka.goalfollower.ro.goalfollower.SignUpActivity
-ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:71:9-61
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:83:9-85:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:85:13-49
 	android:name
-		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:71:19-49
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:84:13-43
+activity#cegeka.goalfollower.ro.goalfollower.SendViaNetActivity
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:86:9-88:52
+	android:screenOrientation
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:88:13-49
+	android:name
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:87:13-47
+activity#cegeka.goalfollower.ro.goalfollower.PendingGoalActivity
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:89:9-57
+	android:name
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:89:19-54
+activity#cegeka.goalfollower.ro.goalfollower.FinishInternetActivity
+ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:90:9-60
+	android:name
+		ADDED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml:90:19-57
 uses-sdk
 INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\stefan\Downloads\GoalFollower\app\src\main\AndroidManifest.xml

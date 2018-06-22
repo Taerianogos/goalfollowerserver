@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -73,42 +77,72 @@ public class More_Info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more__info);
 
-
         Intent in = getIntent();
         done=findViewById(R.id.button2);
         index = in.getIntExtra("com.example.cristi.firstcegeka.Item" , -1);
         Toast.makeText(this, index + "" , Toast.LENGTH_LONG).show();
+        Button doneNet = findViewById(R.id.button11);
+        doneNet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexfordel=index;
+                myRef.child("users")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child("Goals")
+                        .child(returnlist.get(indexfordel).desc)
+                        .child("pass")
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                String UID = dataSnapshot.getValue(String.class);
+                                myRef.child("users").child(UID)
+                                        .child("For Confirmation Goals")
+                                        .child(returnlist.get(indexfordel).desc)
+                                        .setValue(returnlist.get(indexfordel));
+                                myRef.child("users").child(UID)
+                                        .child("For Confirmation Goals UID")
+                                        .child(returnlist.get(indexfordel).desc)
+                                        .setValue(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            }
 
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+            }
+        });
         done.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-            indexfordel=index;
-        if(returnlist.get(indexfordel).pass!=null){
-            Intent passssssIntent = new Intent (More_Info.this ,UnlockRecActivity.class);
-        startActivityForResult(passssssIntent,3);}else {
-            Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
-            intent13.putExtra("index" , index);
-            intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
-            PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), sizelist-1, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
-            alarmManagers.set(sizelist-1,(AlarmManager) getSystemService(ALARM_SERVICE));
-            alarmManagers.get(sizelist-1).cancel(pendingIntent12);
-            alarmManagers.remove(sizelist-1);
-            myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(index).desc).setValue(null);
-            returnlist.remove(index);
-            S_description_not.remove(index);
-            S_name_not.remove(index);
-            //Log.d("caba",index+"");
-            sum=sum+100;
-            opkivus.set(0,sum);
-            Addscor();
-            Addg();
-            Adddesc();
-            Addnem();
-            ListActivity.act.finish();
-            finish();}
-        Toast.makeText(More_Info.this,ifvalidpass+"",Toast.LENGTH_LONG).show();
-    }
-});
+            @Override
+            public void onClick(View v) {
+                indexfordel=index;
+                if(returnlist.get(indexfordel).pass!=null){
+                    Intent passssssIntent = new Intent (More_Info.this ,UnlockRecActivity.class);
+                    startActivityForResult(passssssIntent,3);}else {
+                    Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
+                    intent13.putExtra("index" , index);
+                    intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
+                    PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), sizelist-1, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
+                    alarmManagers.set(sizelist-1,(AlarmManager) getSystemService(ALARM_SERVICE));
+                    alarmManagers.get(sizelist-1).cancel(pendingIntent12);
+                    alarmManagers.remove(sizelist-1);
+                    myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Goals").child(returnlist.get(index).desc).setValue(null);
+                    returnlist.remove(index);
+                    S_description_not.remove(index);
+                    S_name_not.remove(index);
+                    //Log.d("caba",index+"");
+                    sum=sum+100;
+                    opkivus.set(0,sum);
+                    myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Score").setValue(sum);
+                    Addscor();
+                    Addg();
+                    Adddesc();
+                    Addnem();
+                    ListActivity.act.finish();
+                    finish();}
+                Toast.makeText(More_Info.this,ifvalidpass+"",Toast.LENGTH_LONG).show();
+            }
+        });
         set = (Button) findViewById(R.id.set_not_info_btn);
         name_not = (EditText) findViewById(R.id.not_name_edit_text);
         description_not = (EditText) findViewById(R.id.not_description_edit_text);
@@ -132,7 +166,7 @@ public class More_Info extends AppCompatActivity {
         duration_not.setText("");*/
         name_not.setText(itemmf);
         description_not.setText(upoi);
-       // duration_not.setText(itemmf.ti+"");
+        // duration_not.setText(itemmf.ti+"");
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,22 +179,22 @@ public class More_Info extends AppCompatActivity {
                 upoi=description_not.getText().toString();
                 S_description_not.set(index,upoi);
                 durations[index] = I_duration_not;
-               // for (int f=0 ; f<val ; f++)
-               // {
+                // for (int f=0 ; f<val ; f++)
+                // {
 
-                    Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
-                    intent13.putExtra("index" , index);
-                    intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
-                    PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), index, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
+                Intent intent13 = new Intent(getApplicationContext() , Notification_reciever_2.class);
+                intent13.putExtra("index" , index);
+                intent13.setAction("MY_NOTIFICATION_MESSAGE_2");
+                PendingIntent pendingIntent12 = PendingIntent.getBroadcast(getApplicationContext(), index, intent13, PendingIntent.FLAG_UPDATE_CURRENT);
 //                    alarmManagers.add(null);
-                    alarmManagers.set(index,(AlarmManager) getSystemService(ALARM_SERVICE));
-                    alarmManagers.get(index).setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 60000 *durations[index], pendingIntent12);
-                   // Toast.makeText(getApplicationContext() , "" + f , Toast.LENGTH_LONG).show();
+                alarmManagers.set(index,(AlarmManager) getSystemService(ALARM_SERVICE));
+                alarmManagers.get(index).setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 60000 *durations[index], pendingIntent12);
+                // Toast.makeText(getApplicationContext() , "" + f , Toast.LENGTH_LONG).show();
                 // intentArray.add(pendingIntent12);
                 //}
                 Toast.makeText(getApplicationContext(), "Notificare setata", Toast.LENGTH_LONG).show();
-               // Intent intent6 = new Intent(getApplicationContext(), ListActivity.class);
-               // startActivity(intent6);
+                // Intent intent6 = new Intent(getApplicationContext(), ListActivity.class);
+                // startActivity(intent6);
                 Adddesc();
                 Addnem();
                 //S_name_not.clear();
@@ -221,23 +255,23 @@ public class More_Info extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-public void Addnem(){
-            File myfile = new File(this.getFilesDir(), filenameforname);
-            FileOutputStream outputStream;
-            try {
-                outputStream = openFileOutput(filenameforname, MODE_PRIVATE);
-                ObjectOutputStream o = new ObjectOutputStream(outputStream);
-                o.reset();
-                o.writeObject(S_name_not);
-                o.flush();
-                o.close();
-                if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
-            } catch (Exception e) {
-                Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+    public void Addnem(){
+        File myfile = new File(this.getFilesDir(), filenameforname);
+        FileOutputStream outputStream;
+        try {
+            outputStream = openFileOutput(filenameforname, MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream(outputStream);
+            o.reset();
+            o.writeObject(S_name_not);
+            o.flush();
+            o.close();
+            if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
 
-            }
         }
+    }
 
     public void Adddesc() {
         File myfile = new File(this.getFilesDir(), filenamefordesc);

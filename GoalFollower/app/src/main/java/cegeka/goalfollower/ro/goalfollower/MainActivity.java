@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,8 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,16 +41,21 @@ public class MainActivity extends AppCompatActivity {
 
     Button prof_pic;
     Button mLogOut;
+    Button mPendingBtn;
     String mCurrentPhotoPath;
     static final int REQUEST_IMAGE_CAPTURE = 2;
     String filename = "image";
+    String usern;
     ImageView img_cam;
     TextView score ;
+    TextView usernem;
     Button refresh ;
     Button setnot;
     String mSecondPhotoPath;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    DatabaseReference myRefforus = database.getReference();
+    DatabaseReference myRefforsc = database.getReference();
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -104,23 +113,31 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    TextView mata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         img_cam = (ImageView) findViewById(R.id.profile_img);
         prof_pic = (Button) findViewById(R.id.prof_pic);
-        score = (TextView) findViewById(R.id.score_text_view);
+        //score = (TextView) findViewById(R.id.score_text_view);
         mLogOut = findViewById(R.id.log_out);
+        usernem=findViewById(R.id.textView);
+        mata = findViewById(R.id.textView6);
         Readf();
         Readscor();
-        More_Info.sum=opkivus.get(0);
-        score.setText("Your Score is : " + More_Info.sum);
-        refresh = (Button) findViewById(R.id.refresh_btn);
-        refresh.setOnClickListener(new View.OnClickListener() {
+        //More_Info.sum=opkivus.get(0);
+        // score.setText("Your Score is : " + More_Info.sum);
+        DatabaseReference myRefforsc = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Score");
+        myRefforsc.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                score.setText("Your Score is : " + More_Info.sum );
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mata.setText("Your score is : " + dataSnapshot.getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
@@ -133,14 +150,26 @@ public class MainActivity extends AppCompatActivity {
             if (bMap == null)
             {
                 mCurrentPhotoPath = mSecondPhotoPath;
-                 f= new File(mCurrentPhotoPath);
-                 bMap = BitmapFactory.decodeFile(f.getAbsolutePath());
+                f= new File(mCurrentPhotoPath);
+                bMap = BitmapFactory.decodeFile(f.getAbsolutePath());
             }
             img_cam.setImageBitmap(bMap);
-            img_cam.setRotation(90);
+            img_cam.setRotation(0);
         }
 
+        DatabaseReference myRefforus = FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("username");
+        myRefforus.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                usernem.setText(dataSnapshot.getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         prof_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,6 +196,20 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+            }
+        });
+        mPendingBtn = findViewById(R.id.pendingBtn);
+        mPendingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PendingGoalActivity.class));
+            }
+        });
+        Button mFinishBtn = findViewById(R.id.finishNetBtn);
+        mFinishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FinishInternetActivity.class));
             }
         });
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -233,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 mCurrentPhotoPath = mSecondPhotoPath;
                 f= new File(mCurrentPhotoPath);
-                 bMap = BitmapFactory.decodeFile(f.getAbsolutePath());
+                bMap = BitmapFactory.decodeFile(f.getAbsolutePath());
             }
             Addg();
             img_cam.setImageBitmap(bMap);
@@ -242,4 +285,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-

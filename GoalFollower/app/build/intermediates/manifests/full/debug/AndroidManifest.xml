@@ -80,14 +80,33 @@
             android:name="cegeka.goalfollower.ro.goalfollower.Notification_1"
             android:screenOrientation="portrait" />
 
-        <receiver android:name="cegeka.goalfollower.ro.goalfollower.Notification_reciever" />
-        <receiver android:name="cegeka.goalfollower.ro.goalfollower.Notification_reciever_2" />
+        <receiver
+            android:name="cegeka.goalfollower.ro.goalfollower.Notification_reciever"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name="cegeka.goalfollower.ro.goalfollower.Notification_reciever_2"
+            android:screenOrientation="portrait" />
 
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.UnlockActivity" />
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.UnlockRecActivity" />
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.SetpassActivity" />
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.LogInActivity" />
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.SignUpActivity" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.UnlockActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.UnlockRecActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.SetpassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.LogInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.SendViaNetActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="cegeka.goalfollower.ro.goalfollower.PendingGoalActivity" />
+        <activity android:name="cegeka.goalfollower.ro.goalfollower.FinishInternetActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

@@ -70,7 +70,6 @@ public class AddActivity extends AppCompatActivity {
         editTextdesc = findViewById(R.id.editText);
         editTextdescrip=findViewById(R.id.editText5);
         textDate = findViewById(R.id.editText3);
-        editpass=findViewById(R.id.editText7);
         addbtn = findViewById(R.id.button3);
         beam = findViewById(R.id.beambttn);
         mSendBtn = findViewById(R.id.sendBtn);
@@ -83,7 +82,7 @@ public class AddActivity extends AppCompatActivity {
                     stupiddesc = editTextdesc.getText().toString();
                     stupiddate=textDate.getText().toString();
                     stupiddescrip=editTextdescrip.getText().toString();
-                    stupidpass=editpass.getText().toString();
+                    stupidpass=FirebaseAuth.getInstance().getCurrentUser().getUid();
                     concat=stupiddesc+"/"+stupiddate+"/"+stupiddescrip+"/"+stupidpass+"/";
                     Intent intent =
                             new Intent(AddActivity.this, BeamActivity.class);
@@ -106,6 +105,7 @@ public class AddActivity extends AppCompatActivity {
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
+
                     DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Nr Goals");
                     ref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -140,7 +140,7 @@ public class AddActivity extends AppCompatActivity {
                 }
                 prostie.desc = editTextdesc.getText().toString();
                 prostie.descrip = editTextdescrip.getText().toString();
-                prostie.pass = editpass.getText().toString();
+                prostie.pass = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 Intent intent = new Intent(AddActivity.this, SendViaNetActivity.class);
                 startActivity(intent);
             }
