@@ -88,6 +88,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".PendingGoalActivity" />
         <activity android:name=".FinishInternetActivity" />
+        <activity android:name=".ReceiveMenuActivity" />
+        <activity android:name=".ConfirmMenuActivity"></activity>
     </application>
 
 </manifest>

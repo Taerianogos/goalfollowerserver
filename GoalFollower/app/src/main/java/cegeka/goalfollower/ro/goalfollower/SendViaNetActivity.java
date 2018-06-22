@@ -31,7 +31,7 @@ public class SendViaNetActivity extends AppCompatActivity {
         item =prostie;
         mUserText = findViewById(R.id.nameToSend);
         mSendBtn = findViewById(R.id.sendButton);
-
+        setTitle("Send goal through internet");
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

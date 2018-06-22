@@ -40,7 +40,7 @@ public class Notification_reciever extends BroadcastReceiver{
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.robotboi)
+                .setSmallIcon(R.drawable.notificon)
                 .setContentTitle("Cegeka says")
                 .setContentText("Your Score is equal to " + More_Info.sum)
                 .setSound(sound)

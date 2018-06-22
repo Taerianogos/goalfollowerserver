@@ -26,7 +26,7 @@ public class LogInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-
+        setTitle("Log in to GoalFollower");
         mLogIn = findViewById(R.id.button10);
         mEmail = findViewById(R.id.emaillogin);
         mPass = findViewById(R.id.passlogin);

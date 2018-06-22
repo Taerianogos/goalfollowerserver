@@ -31,6 +31,7 @@ public class FinishInternetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_internet);
         fListView = (ListView) findViewById(R.id.finishListView);
+        setTitle("Confirm through Internet");
         activ = this;
         myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("For Confirmation Goals")
                 .addListenerForSingleValueEvent(new ValueEventListener() {

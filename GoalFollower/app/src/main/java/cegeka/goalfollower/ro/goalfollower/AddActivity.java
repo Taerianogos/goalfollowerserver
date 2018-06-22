@@ -66,7 +66,7 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-
+        setTitle("Add or send a new goal");
         editTextdesc = findViewById(R.id.editText);
         editTextdescrip=findViewById(R.id.editText5);
         textDate = findViewById(R.id.editText3);

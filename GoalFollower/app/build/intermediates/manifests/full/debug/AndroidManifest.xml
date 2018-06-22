@@ -107,6 +107,8 @@
             android:screenOrientation="portrait" />
         <activity android:name="cegeka.goalfollower.ro.goalfollower.PendingGoalActivity" />
         <activity android:name="cegeka.goalfollower.ro.goalfollower.FinishInternetActivity" />
+        <activity android:name="cegeka.goalfollower.ro.goalfollower.ReceiveMenuActivity" />
+        <activity android:name="cegeka.goalfollower.ro.goalfollower.ConfirmMenuActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

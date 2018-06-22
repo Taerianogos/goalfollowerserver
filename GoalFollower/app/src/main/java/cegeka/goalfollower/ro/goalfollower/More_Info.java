@@ -80,7 +80,7 @@ public class More_Info extends AppCompatActivity {
         Intent in = getIntent();
         done=findViewById(R.id.button2);
         index = in.getIntExtra("com.example.cristi.firstcegeka.Item" , -1);
-        Toast.makeText(this, index + "" , Toast.LENGTH_LONG).show();
+        setTitle(returnlist.get(index).desc);
         Button doneNet = findViewById(R.id.button11);
         doneNet.setOnClickListener(new View.OnClickListener() {
             @Override

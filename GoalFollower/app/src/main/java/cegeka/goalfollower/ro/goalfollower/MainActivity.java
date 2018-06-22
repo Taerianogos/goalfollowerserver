@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mLogOut = findViewById(R.id.log_out);
         usernem=findViewById(R.id.textView);
         mata = findViewById(R.id.textView6);
+        setTitle("Menu");
         Readf();
         Readscor();
         //More_Info.sum=opkivus.get(0);
@@ -181,9 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     File photoFile = null;
                     try {
                         photoFile = createImageFile();
-                        Toast.makeText(getApplicationContext() , "fiser facut " + mCurrentPhotoPath , Toast.LENGTH_LONG).show();
                     } catch (IOException ex) {
-                        Toast.makeText(getApplicationContext() , "nu s-a putut crea fisierul" , Toast.LENGTH_LONG).show();
                     }
                     if (photoFile!=null)
                     {
@@ -202,14 +201,7 @@ public class MainActivity extends AppCompatActivity {
         mPendingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PendingGoalActivity.class));
-            }
-        });
-        Button mFinishBtn = findViewById(R.id.finishNetBtn);
-        mFinishBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), FinishInternetActivity.class));
+                startActivity(new Intent(MainActivity.this, ConfirmMenuActivity.class));
             }
         });
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -253,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void OpenRecActivity(View view){Intent intent =
-            new Intent(MainActivity.this, RecActivity.class);
+            new Intent(MainActivity.this, ReceiveMenuActivity.class);
         startActivity(intent);}
 
     @Override
@@ -261,11 +253,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1){
             switch (resultCode){
-                case Activity.RESULT_OK:{
-                    Toast.makeText(MainActivity.this, "Merge aparent ", Toast.LENGTH_SHORT).show();
-                    break;}
-                default:
-                    Toast.makeText(MainActivity.this, "nu mrg", Toast.LENGTH_LONG).show();
+                case Activity.RESULT_OK:{break;}
+                default: break;
             }
         }
         if (requestCode == 2)

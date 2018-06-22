@@ -57,6 +57,7 @@ boolean delay=false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         act = this;
+        setTitle("My goals");
 
         //Readf();
         final ListView GoalListView = (ListView) findViewById(R.id.GoalListView);

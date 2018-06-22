@@ -47,6 +47,7 @@ TextView textvalid;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unlock_rec);
         mmNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        setTitle("Receive confirmation through NFC");
         deltolist=findViewById(R.id.button7);
         if (mmNfcAdapter == null) {
             Toast.makeText(this, "NFC is not available", Toast.LENGTH_LONG).show();

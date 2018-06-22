@@ -33,6 +33,7 @@ public class PendingGoalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pending_goal);
         PendingListView = (ListView) findViewById(R.id.PendingListView);
         acti = this;
+        setTitle("Receive goal through internet");
         myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Pending Goals")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

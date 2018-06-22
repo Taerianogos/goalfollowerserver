@@ -51,6 +51,7 @@ public class RecActivity extends AppCompatActivity implements NfcAdapter.CreateN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rec);
+        setTitle("Receive goal through NFC");
         editdesc = findViewById(R.id.editText2);
         editdate = findViewById(R.id.editText4);
         editdescrip=findViewById(R.id.editText6);
