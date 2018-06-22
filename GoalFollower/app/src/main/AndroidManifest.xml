@@ -86,10 +86,14 @@
         <activity
             android:name=".SendViaNetActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".PendingGoalActivity" />
-        <activity android:name=".FinishInternetActivity" />
-        <activity android:name=".ReceiveMenuActivity" />
-        <activity android:name=".ConfirmMenuActivity"></activity>
+        <activity android:name=".PendingGoalActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FinishInternetActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ReceiveMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ConfirmMenuActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

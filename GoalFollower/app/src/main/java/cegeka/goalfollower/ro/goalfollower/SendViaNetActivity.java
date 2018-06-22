@@ -1,5 +1,6 @@
 package cegeka.goalfollower.ro.goalfollower;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +53,8 @@ public class SendViaNetActivity extends AppCompatActivity {
                         if(!ok) Toast.makeText(SendViaNetActivity.this, "Username not found", Toast.LENGTH_LONG).show();
                         else if(Uid != null){
                             myRef.child("users").child(Uid).child("Pending Goals").child(item.desc).setValue(item);
+                            Toast.makeText(SendViaNetActivity.this, "Goal sent!", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }
                     }
 

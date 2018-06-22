@@ -103,6 +103,7 @@ public class More_Info extends AppCompatActivity {
                                         .child("For Confirmation Goals UID")
                                         .child(returnlist.get(indexfordel).desc)
                                         .setValue(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                Toast.makeText(getApplicationContext(), "Request for confirmation sent! When it will be received, you will be able to press Finish Goal without need of NFC", Toast.LENGTH_LONG).show();
                             }
 
                             @Override
@@ -249,9 +250,7 @@ public class More_Info extends AppCompatActivity {
             o.writeObject(charr);
             o.flush();
             o.close();
-            if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
@@ -265,9 +264,9 @@ public class More_Info extends AppCompatActivity {
             o.writeObject(S_name_not);
             o.flush();
             o.close();
-            if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
+            //if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
+            //Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
 
         }
@@ -283,9 +282,9 @@ public class More_Info extends AppCompatActivity {
             o.writeObject(S_description_not);
             o.flush();
             o.close();
-            if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
+            //if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
+            //Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
 
         }
@@ -337,7 +336,7 @@ public class More_Info extends AppCompatActivity {
             o.close();
             finish();
         } catch (Exception e) {
-            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
+            //Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
 
         }
@@ -352,9 +351,9 @@ public class More_Info extends AppCompatActivity {
             o.writeObject(opkivus);
             o.flush();
             o.close();
-            if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
+            //if (myfile.exists()) Toast.makeText(More_Info.this, "yes", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
+            //Toast.makeText(More_Info.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
 
         }

@@ -126,7 +126,7 @@ public class RecActivity extends AppCompatActivity implements NfcAdapter.CreateN
         String neconcat= new String(msg.getRecords()[0].getPayload());
         for (String retval: neconcat.split("/")) {
             if(i==0) editdesc.setText(retval);
-            if(i==1) editdate.setText(retval);
+            //if(i==1) editdate.setText(retval);
             if(i==2) editdescrip.setText(retval);
             if(i==3) recitem.pass=retval;
             i++;
