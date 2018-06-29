@@ -42,7 +42,7 @@ public class Notification_reciever extends BroadcastReceiver{
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.notificon)
                 .setContentTitle("Cegeka says")
-                .setContentText("Your Score is equal to " + More_Info.sum)
+                .setContentText("Your Score is equal to " + MainActivity.scor)
                 .setSound(sound)
                 .setAutoCancel(true);
 

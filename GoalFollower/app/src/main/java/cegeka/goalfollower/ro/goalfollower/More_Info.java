@@ -79,6 +79,7 @@ public class More_Info extends AppCompatActivity {
 
         Intent in = getIntent();
         done=findViewById(R.id.button2);
+        sum = MainActivity.scor;
         index = in.getIntExtra("com.example.cristi.firstcegeka.Item" , -1);
         setTitle(returnlist.get(index).desc);
         Button doneNet = findViewById(R.id.button11);
@@ -141,7 +142,6 @@ public class More_Info extends AppCompatActivity {
                     Addnem();
                     ListActivity.act.finish();
                     finish();}
-                Toast.makeText(More_Info.this,ifvalidpass+"",Toast.LENGTH_LONG).show();
             }
         });
         set = (Button) findViewById(R.id.set_not_info_btn);
@@ -174,7 +174,7 @@ public class More_Info extends AppCompatActivity {
 
                 S_duration_not = duration_not.getText().toString();
                 I_duration_not = Integer.parseInt(S_duration_not);
-                Toast.makeText(getApplicationContext() , "" + I_duration_not , Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext() , "" + I_duration_not , Toast.LENGTH_LONG).show();
                 itemmf=name_not.getText().toString();
                 S_name_not.set(index,itemmf);
                 upoi=description_not.getText().toString();
@@ -226,6 +226,7 @@ public class More_Info extends AppCompatActivity {
                     //Log.d("caba",index+"");
                     sum=sum+100;
                     opkivus.set(0,sum);
+                    myRef.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Score").setValue(sum);
                     Addscor();
                     Addg();
                     Adddesc();
@@ -235,7 +236,7 @@ public class More_Info extends AppCompatActivity {
                     break;
                 }
                 default:
-                    Toast.makeText(More_Info.this, "Parola gresita", Toast.LENGTH_LONG).show();
+                    Toast.makeText(More_Info.this, "", Toast.LENGTH_LONG).show();
             }
         }
     }

@@ -157,11 +157,9 @@ public class AddActivity extends AppCompatActivity {
             o.flush();
             o.close();
             Intent intent = new Intent(AddActivity.this, MainActivity.class);
-            if (myfile.exists()) Toast.makeText(AddActivity.this, "yes", Toast.LENGTH_LONG).show();
             setResult(Activity.RESULT_OK, intent);
             finish();
         } catch (Exception e) {
-            Toast.makeText(AddActivity.this, "no", Toast.LENGTH_LONG).show();
             e.printStackTrace();
 
         }

@@ -1783,7 +1783,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -3053,72 +3053,75 @@ public final class R {
     public static final int abc_vector_test=0x7f070053;
     public static final int acceptbtn=0x7f070054;
     public static final int add2btn=0x7f070055;
-    public static final int addsendgoalbtn=0x7f070056;
-    public static final int common_full_open_on_phone=0x7f070057;
-    public static final int common_google_signin_btn_icon_dark=0x7f070058;
-    public static final int common_google_signin_btn_icon_dark_focused=0x7f070059;
-    public static final int common_google_signin_btn_icon_dark_normal=0x7f07005a;
-    public static final int common_google_signin_btn_icon_dark_normal_background=0x7f07005b;
-    public static final int common_google_signin_btn_icon_disabled=0x7f07005c;
-    public static final int common_google_signin_btn_icon_light=0x7f07005d;
-    public static final int common_google_signin_btn_icon_light_focused=0x7f07005e;
-    public static final int common_google_signin_btn_icon_light_normal=0x7f07005f;
-    public static final int common_google_signin_btn_icon_light_normal_background=0x7f070060;
-    public static final int common_google_signin_btn_text_dark=0x7f070061;
-    public static final int common_google_signin_btn_text_dark_focused=0x7f070062;
-    public static final int common_google_signin_btn_text_dark_normal=0x7f070063;
-    public static final int common_google_signin_btn_text_dark_normal_background=0x7f070064;
-    public static final int common_google_signin_btn_text_disabled=0x7f070065;
-    public static final int common_google_signin_btn_text_light=0x7f070066;
-    public static final int common_google_signin_btn_text_light_focused=0x7f070067;
-    public static final int common_google_signin_btn_text_light_normal=0x7f070068;
-    public static final int common_google_signin_btn_text_light_normal_background=0x7f070069;
-    public static final int confirm=0x7f07006a;
-    public static final int confirm1btn=0x7f07006b;
-    public static final int confirmnet=0x7f07006c;
-    public static final int confirmnfc=0x7f07006d;
-    public static final int confirmthroughinternetbtn=0x7f07006e;
-    public static final int confirmthroughnfcbtn=0x7f07006f;
-    public static final int finishgoalbtn=0x7f070070;
-    public static final int goallist=0x7f070071;
-    public static final int googleg_disabled_color_18=0x7f070072;
-    public static final int googleg_standard_color_18=0x7f070073;
-    public static final int ic_launcher_background=0x7f070074;
-    public static final int ic_launcher_foreground=0x7f070075;
-    public static final int login=0x7f070076;
-    public static final int logo=0x7f070077;
-    public static final int logout=0x7f070078;
-    public static final int notification_action_background=0x7f070079;
-    public static final int notification_bg=0x7f07007a;
-    public static final int notification_bg_low=0x7f07007b;
-    public static final int notification_bg_low_normal=0x7f07007c;
-    public static final int notification_bg_low_pressed=0x7f07007d;
-    public static final int notification_bg_normal=0x7f07007e;
-    public static final int notification_bg_normal_pressed=0x7f07007f;
-    public static final int notification_icon_background=0x7f070080;
-    public static final int notification_template_icon_bg=0x7f070081;
-    public static final int notification_template_icon_low_bg=0x7f070082;
-    public static final int notification_tile_bg=0x7f070083;
-    public static final int notificon=0x7f070084;
-    public static final int notify_panel_notification_icon_bg=0x7f070085;
-    public static final int profilepicture=0x7f070086;
-    public static final int receivebtn=0x7f070087;
-    public static final int receivethroughinternetbtn=0x7f070088;
-    public static final int receivethroughnfcbtn=0x7f070089;
-    public static final int refusebtn=0x7f07008a;
-    public static final int rejectbtn=0x7f07008b;
-    public static final int requestconfirmationviainternetbtn=0x7f07008c;
-    public static final int robotboi=0x7f07008d;
-    public static final int sendbtn=0x7f07008e;
-    public static final int sendnfc=0x7f07008f;
-    public static final int sendviainternet=0x7f070090;
-    public static final int sendviainternetbtn=0x7f070091;
-    public static final int sendvianfcbtn=0x7f070092;
-    public static final int setbtn=0x7f070093;
-    public static final int setscorenotification=0x7f070094;
-    public static final int signup=0x7f070095;
-    public static final int tooltip_frame_dark=0x7f070096;
-    public static final int tooltip_frame_light=0x7f070097;
+    public static final int addbtn=0x7f070056;
+    public static final int addsendgoal=0x7f070057;
+    public static final int addsendgoalbtn=0x7f070058;
+    public static final int common_full_open_on_phone=0x7f070059;
+    public static final int common_google_signin_btn_icon_dark=0x7f07005a;
+    public static final int common_google_signin_btn_icon_dark_focused=0x7f07005b;
+    public static final int common_google_signin_btn_icon_dark_normal=0x7f07005c;
+    public static final int common_google_signin_btn_icon_dark_normal_background=0x7f07005d;
+    public static final int common_google_signin_btn_icon_disabled=0x7f07005e;
+    public static final int common_google_signin_btn_icon_light=0x7f07005f;
+    public static final int common_google_signin_btn_icon_light_focused=0x7f070060;
+    public static final int common_google_signin_btn_icon_light_normal=0x7f070061;
+    public static final int common_google_signin_btn_icon_light_normal_background=0x7f070062;
+    public static final int common_google_signin_btn_text_dark=0x7f070063;
+    public static final int common_google_signin_btn_text_dark_focused=0x7f070064;
+    public static final int common_google_signin_btn_text_dark_normal=0x7f070065;
+    public static final int common_google_signin_btn_text_dark_normal_background=0x7f070066;
+    public static final int common_google_signin_btn_text_disabled=0x7f070067;
+    public static final int common_google_signin_btn_text_light=0x7f070068;
+    public static final int common_google_signin_btn_text_light_focused=0x7f070069;
+    public static final int common_google_signin_btn_text_light_normal=0x7f07006a;
+    public static final int common_google_signin_btn_text_light_normal_background=0x7f07006b;
+    public static final int confirm=0x7f07006c;
+    public static final int confirm1btn=0x7f07006d;
+    public static final int confirmbtn=0x7f07006e;
+    public static final int confirmnet=0x7f07006f;
+    public static final int confirmnfc=0x7f070070;
+    public static final int confirmthroughinternetbtn=0x7f070071;
+    public static final int confirmthroughnfcbtn=0x7f070072;
+    public static final int finishgoalbtn=0x7f070073;
+    public static final int goallist=0x7f070074;
+    public static final int googleg_disabled_color_18=0x7f070075;
+    public static final int googleg_standard_color_18=0x7f070076;
+    public static final int ic_launcher_background=0x7f070077;
+    public static final int ic_launcher_foreground=0x7f070078;
+    public static final int login=0x7f070079;
+    public static final int logo=0x7f07007a;
+    public static final int logout=0x7f07007b;
+    public static final int notification_action_background=0x7f07007c;
+    public static final int notification_bg=0x7f07007d;
+    public static final int notification_bg_low=0x7f07007e;
+    public static final int notification_bg_low_normal=0x7f07007f;
+    public static final int notification_bg_low_pressed=0x7f070080;
+    public static final int notification_bg_normal=0x7f070081;
+    public static final int notification_bg_normal_pressed=0x7f070082;
+    public static final int notification_icon_background=0x7f070083;
+    public static final int notification_template_icon_bg=0x7f070084;
+    public static final int notification_template_icon_low_bg=0x7f070085;
+    public static final int notification_tile_bg=0x7f070086;
+    public static final int notificon=0x7f070087;
+    public static final int notify_panel_notification_icon_bg=0x7f070088;
+    public static final int profilepicture=0x7f070089;
+    public static final int receivebtn=0x7f07008a;
+    public static final int receivethroughinternetbtn=0x7f07008b;
+    public static final int receivethroughnfcbtn=0x7f07008c;
+    public static final int refusebtn=0x7f07008d;
+    public static final int rejectbtn=0x7f07008e;
+    public static final int requestconfirmationviainternetbtn=0x7f07008f;
+    public static final int robotboi=0x7f070090;
+    public static final int sendbtn=0x7f070091;
+    public static final int sendnfc=0x7f070092;
+    public static final int sendviainternet=0x7f070093;
+    public static final int sendviainternetbtn=0x7f070094;
+    public static final int sendvianfcbtn=0x7f070095;
+    public static final int setbtn=0x7f070096;
+    public static final int setscorenotification=0x7f070097;
+    public static final int signup=0x7f070098;
+    public static final int tooltip_frame_dark=0x7f070099;
+    public static final int tooltip_frame_light=0x7f07009a;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -7948,7 +7951,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

@@ -105,7 +105,18 @@
         <activity
             android:name="cegeka.goalfollower.ro.goalfollower.SendViaNetActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="cegeka.goalfollower.ro.goalfollower.PendingGoalActivity" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.PendingGoalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.FinishInternetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.ReceiveMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cegeka.goalfollower.ro.goalfollower.ConfirmMenuActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

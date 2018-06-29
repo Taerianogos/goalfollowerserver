@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\stefan\\Downloads\\GoalFollower\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
+            "outputFile": "C:\\Users\\stefan\\Downloads\\Goalfollower-master\\GoalFollower\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
             "map": [
                 {
                     "source": "C:\\Users\\stefan\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\3418af71124722c86c944d21a21fb2a6\\res\\values-da\\values.xml",

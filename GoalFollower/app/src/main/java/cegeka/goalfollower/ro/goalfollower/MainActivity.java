@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     TextView mata;
+    public static int scor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
         myRefforsc.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //More_Info.sum=Integer.valueOf(dataSnapshot.getValue().toString());
+                //opkivus.set(0,Integer.valueOf(dataSnapshot.getValue().toString())
+                // );
+                scor = dataSnapshot.getValue(Integer.class);
                 mata.setText("Your score is : " + dataSnapshot.getValue().toString());
             }
 
@@ -269,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
             }
             Addg();
             img_cam.setImageBitmap(bMap);
-            img_cam.setRotation(90);
+            img_cam.setRotation(0);
         }
     }
 

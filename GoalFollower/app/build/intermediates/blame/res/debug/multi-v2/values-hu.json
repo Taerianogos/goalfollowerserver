@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\stefan\\Downloads\\GoalFollower\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
+            "outputFile": "C:\\Users\\stefan\\Downloads\\Goalfollower-master\\GoalFollower\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\stefan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\6cc1fec95296d039eaec84c574121e8d\\res\\values-hu\\values-hu.xml",
